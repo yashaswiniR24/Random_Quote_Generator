@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-4 mx-auto" style="max-width: 500px;">
+  <h3 class="text-center mb-3">Feedback Form</h3>
+  <form id="feedbackForm" action="/submit" method="POST">
+    <div class="mb-3">
+      <label>Name:</label>
+      <input type="text" class="form-control" name="name" id="name">
+    </div>
+    <div class="mb-3">
+      <label>Email:</label>
+      <input type="email" class="form-control" name="email" id="email">
+    </div>
+    <div class="mb-3">
+      <label>Message:</label>
+      <textarea class="form-control" name="message" id="message"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success w-100">Submit</button>
+  </form>
+  <div id="successMsg" class="text-success mt-3" style="display:none;">Form submitted successfully!</div>
+</div>
+{% endblock %}
