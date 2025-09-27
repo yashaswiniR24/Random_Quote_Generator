@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-5">
+  <div class="row align-items-center">
+    <div class="col-md-6 mx-auto">
+      <h1 class="fw-bold mb-3">Welcome to QuoteGen ✨</h1>
+      <p class="lead mb-4">
+        A simple web app that delivers inspiring random quotes right to your screen.
+      </p>
+
+      {% if not session.get('user') %}
+        <a href="{{ url_for('signup') }}" class="btn btn-primary me-2">Sign Up</a>
+        <a href="{{ url_for('login') }}" class="btn btn-outline-light">Login</a>
+      {% else %}
+        <a href="{{ url_for('quotes') }}" class="btn btn-success">Get Quotes</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
